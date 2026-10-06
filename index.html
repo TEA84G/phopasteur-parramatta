@@ -1,161 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phở Pasteur Parramatta - Authentic Vietnamese Cuisine</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pho Pasteur Parramatta | Family Owned Since 1992 | 137 Church St</title>
+  
+  <!-- Canonical & SEO Meta -->
+  <link rel="canonical" href="https://phopasteur-parramatta.com/" />
+  <meta name="description" content="Authentic Southern Vietnamese cuisine in the heart of Parramatta. Owned & operated by the Pham family for over 30 years since 1992. Traditional 24-hr beef pho, bánh xèo, broken rice, BYO & vegan friendly." />
+  <meta name="keywords" content="Pho Pasteur, Pho Pasteur Parramatta, Vietnamese Restaurant Parramatta, Pho Church Street, Best Pho Western Sydney, Beef Pho, Banh Xeo, BYO Parramatta" />
+  <meta name="author" content="Pho Pasteur Parramatta" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:url" content="https://phopasteur-parramatta.com/" />
+  <meta property="og:title" content="Pho Pasteur Parramatta | Family-Owned Vietnamese Since 1992" />
+  <meta property="og:description" content="Over 30 years of hearty slow-simmered broth, authentic recipes from Tây Ninh, and family hospitality at 137 Church St, Parramatta." />
+  <meta property="og:image" content="https://phopasteur-parramatta.com/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://phopasteur-parramatta.com/" />
+  <meta name="twitter:title" content="Pho Pasteur Parramatta | 137 Church St" />
+  <meta name="twitter:description" content="Family-owned since 1992. Serving authentic Vietnamese phở, bánh xèo, and traditional plates on Church Street." />
+
+  <!-- Google Structured Data (LocalBusiness Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Pho Pasteur Church St Parramatta",
+    "image": "https://phopasteur-parramatta.com/og-image.jpg",
+    "@id": "https://phopasteur-parramatta.com",
+    "url": "https://phopasteur-parramatta.com",
+    "telephone": "+61409012363",
+    "priceRange": "$$",
+    "servesCuisine": "Vietnamese",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "137 Church Street",
+      "addressLocality": "Parramatta",
+      "addressRegion": "NSW",
+      "postalCode": "2150",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -33.8183,
+      "longitude": 151.0037
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "20:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/phopasteurchurchst",
+      "https://www.facebook.com/phopasteurchurchst"
+    ]
+  }
+  </script>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #9E1B1E;       /* Broth red */
+      --primary-dark: #781013;
+      --accent: #D49022;        /* Toasted spice gold */
+      --dark: #121315;          /* Deep charcoal */
+      --surface: #FFFFFF;
+      --bg: #FAF7F2;            /* Rice paper warm neutral */
+      --bg-alt: #F2EBE1;
+      --text: #27282B;
+      --text-muted: #5C6068;
+      --border: #E4DCD0;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 70px; /* Space for mobile floating bar */
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    /* Top Notice Bar */
+    .top-bar {
+      background: var(--dark);
+      color: #D2D5DD;
+      font-size: 0.8rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #22252A;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar strong {
+      color: var(--accent);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0.9rem 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(158, 27, 30, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--dark);
+      color: var(--dark);
+    }
+
+    .btn-outline:hover {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .btn-insta {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #fff !important;
+      border: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5.5rem 0 4rem;
+      background: radial-gradient(circle at 50% 10%, rgba(228, 220, 208, 0.5) 0%, rgba(250, 247, 242, 1) 75%);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.4rem 1.1rem;
+      background: #F8E6E6;
+      color: var(--primary);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1.18;
+      color: var(--dark);
+      margin-bottom: 1.3rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 2.2rem;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      text-align: left;
+    }
+
+    .pillar-card {
+      background: var(--surface);
+      padding: 1.4rem 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    }
+
+    .pillar-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: var(--dark);
+    }
+
+    .pillar-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Section Headings */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 3.2rem;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
+      color: var(--dark);
+    }
+
+    /* Story Section */
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .story-content {
+      background: var(--surface);
+      padding: 2.8rem;
+      border-radius: var(--radius);
+      border-left: 6px solid var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .story-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--dark);
+      margin-bottom: 1.2rem;
+    }
+
+    .story-content p {
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+      font-size: 0.98rem;
+    }
+
+    .stats-column {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-text {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* Menu Grid */
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .dish-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dish-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .dish-badge {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: #FDF1D8;
+      color: #8C5900;
+    }
+
+    .dish-name {
+      font-family: var(--font-display);
+      font-size: 1.22rem;
+      margin-bottom: 0.25rem;
+      color: var(--dark);
+      padding-right: 4rem;
+    }
+
+    .dish-viet {
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .dish-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Location & Details */
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .detail-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2.2rem;
+    }
+
+    .detail-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hours-list {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .hours-list td {
+      padding: 0.38rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .hours-list td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
+    /* Map Box */
+    .map-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 380px;
+      box-shadow: var(--shadow);
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Instagram Banner */
+    .insta-strip {
+      background: linear-gradient(135deg, #1C1E23 0%, #111214 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .insta-strip h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .insta-strip p {
+      color: #C0C3CC;
+      max-width: 580px;
+      margin: 0 auto 1.8rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0C0D0F;
+      color: #8A8E99;
+      padding: 3.5rem 0 2rem;
+      font-size: 0.88rem;
+      border-top: 1px solid #1C1E23;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-display);
+      letter-spacing: 1px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1E2026;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #636773;
+    }
+
+    /* Mobile Sticky Bar */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      z-index: 9999;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+      gap: 0.75rem;
+    }
+
+    .mobile-bar .btn {
+      flex: 1;
+      font-size: 0.85rem;
+      padding: 0.65rem 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .story-layout, .details-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-bar {
+        display: flex;
+      }
+    }
+  </style>
 </head>
-<body class="bg-amber-50 text-stone-800 font-sans">
+<body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3">
-                <img src="./images/logo.jpg" alt="Phở Pasteur Logo" class="h-14 w-auto object-contain">
-                <div>
-                    <span class="text-2xl font-bold tracking-tight text-red-700 block leading-none">PHỞ PASTEUR</span>
-                    <span class="text-xs text-emerald-700 font-semibold uppercase tracking-wider">Parramatta</span>
-                </div>
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Restaurant updates">
+    <div class="container">
+      <div>📍 <strong>137 Church St, Parramatta</strong> · Open Tue–Sun 11am–8pm (Mon Closed)</div>
+      <div>🍜 Dine-In · Takeaway · BYO Friendly</div>
+    </div>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="https://phopasteur-parramatta.com/" class="brand" aria-label="Pho Pasteur Parramatta Home">
+        <span class="brand-title">Phở Pasteur</span>
+        <span class="brand-sub">Church St · Parramatta</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reviews">Featured Review</a></li>
+          <li><a href="#location">Hours & Location</a></li>
+          <li><a href="tel:0409012363" class="btn btn-outline">📞 0409 012 363</a></li>
+          <li><a href="https://www.instagram.com/phopasteurchurchst" target="_blank" rel="noopener noreferrer" class="btn btn-insta">Instagram @phopasteurchurchst</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Family-Owned on Church St Since 1992</span>
+        <h1>Over 30 Years of Heart,<br>Heritage & Broth in Parramatta</h1>
+        <p>
+          Generations of authentic Tây Ninh family recipes cooked low and slow. 
+          Rich aromatic beef marrow broths, crispy golden bánh xèo, and warm family hospitality on Church Street.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">Browse Specialties</a>
+          <a href="tel:0409012363" class="btn btn-outline">Call 0409 012 363</a>
+          <a href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiY9t2KqaWXAxUAAAAAHQAAAAAQCA..i&rlz=1C1JJTC_enAU1144AU1144&udm&fvr=1&pvq=CgsvZy8xdGQwMG13aiIRCgtwaG8gcGFzdGV1chACGAM&lqi=CgtwaG8gcGFzdGV1ckjwnoHA5YCAgAhaFRAAEAEYABgBIgtwaG8gcGFzdGV1cpIBFXZpZXNuYW1lc2VfcmVzdGF1cmFudJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOeWVIQXlVblJSUlJBQvoBBAgAEDg&cs=1&um=1&ie=UTF-8&fb=1&gl=au&sa=X&ftid=0x6b12a321ad064f45:0xf013213fdd358959" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Get Directions ↗</a>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar-card">
+            <div class="pillar-icon">🍲</div>
+            <h3>24-Hour Simmered Broth</h3>
+            <p>Layered aromatics with cinnamon, star anise, charred ginger, and slow-cooked marrow beef bones.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🍻</div>
+            <h3>BYO Welcomed</h3>
+            <p>Bring along your favourite wines or beers to enjoy alongside your meal with friends and family.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🌱</div>
+            <h3>Vegetarian & Vegan Choices</h3>
+            <p>Full spectrum of traditional meat-free phở, noodle soups, tofu stir fries, and vegan spring rolls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story / About Section -->
+    <section id="about" style="background: var(--bg-alt);">
+      <div class="container">
+        <div class="story-layout">
+          <article class="story-content">
+            <span class="section-tag">Family Legacy</span>
+            <h3>A True Church Street Institution</h3>
+            <p>
+              When Mr and Mrs Pham arrived in Australia from the Tây Ninh province in Southern Vietnam, they brought with them determination, deep pride in their heritage, and cherished culinary recipes refined across generations.
+            </p>
+            <p>
+              In 1992, we opened our doors at <strong>137 Church Street, Parramatta</strong>. We’ve watched Parramatta grow and transform around us over three decades, yet inside our kitchen, nothing has changed: every pot of broth is prepared with the same time, patience, and love as day one.
+            </p>
+            <p>
+              Still proudly independent and family-run, we thank the Western Sydney community for welcoming us into their weekly routines, milestones, and family gatherings for over 30 years.
+            </p>
+          </article>
+
+          <div class="stats-column">
+            <div class="stat-card">
+              <div class="stat-num">30+</div>
+              <div class="stat-text">Years on Church St</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">1992</div>
+              <div class="stat-text">Established</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">100%</div>
+              <div class="stat-text">Family Operated</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">140+</div>
+              <div class="stat-text">Dishes on Menu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag">Signature Selection</p>
+          <h2>Crafted With Tradition</h2>
+        </div>
+
+        <div class="menu-tabs">
+          <button class="tab-btn active" onclick="filterDishes('all')">All Dishes</button>
+          <button class="tab-btn" onclick="filterDishes('pho')">Pho & Soups</button>
+          <button class="tab-btn" onclick="filterDishes('mains')">Rice & Pancakes</button>
+          <button class="tab-btn" onclick="filterDishes('vegan')">Vegetarian</button>
+        </div>
+
+        <div class="menu-grid" id="menu-grid">
+          <!-- Item 1 -->
+          <div class="dish-card" data-category="pho">
+            <span class="dish-badge">Signature</span>
+            <h3 class="dish-name">Special Beef Rice Noodle Soup</h3>
+            <div class="dish-viet">Phở Đặc Biệt</div>
+            <p class="dish-desc">Our master stock served with rare sliced beef, tender brisket, and beef balls with fresh basil, sprouts, lemon, and chilli.</p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="dish-card" data-category="pho">
+            <span class="dish-badge">Classic</span>
+            <h3 class="dish-name">Rare Sliced Beef Pho</h3>
+            <div class="dish-viet">Phở Tái</div>
+            <p class="dish-desc">Thinly sliced fresh Australian beef steak lightly blanched in scalding, fragrant cinnamon-star anise beef broth.</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="dish-card" data-category="mains">
+            <span class="dish-badge">Must Try</span>
+            <h3 class="dish-name">Crisp Vietnamese Pancake</h3>
+            <div class="dish-viet">Bánh Xèo</div>
+            <p class="dish-desc">Crisp golden turmeric crepe loaded with prawns, pork, and bean sprouts. Wrapped with fresh mustard greens, mint, and nước chấm.</p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="dish-card" data-category="pho">
+            <span class="dish-badge">Spicy</span>
+            <h3 class="dish-name">Spicy Hue Beef Noodle Soup</h3>
+            <div class="dish-viet">Bún Bò Huế</div>
+            <p class="dish-desc">Central Vietnam speciality: thick round rice vermicelli in a rich, spicy lemongrass and shrimp paste beef broth with beef shank.</p>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="dish-card" data-category="mains">
+            <span class="dish-badge">Popular</span>
+            <h3 class="dish-name">Pork Chop with Broken Rice</h3>
+            <div class="dish-viet">Cơm Tấm Sườn Nướng</div>
+            <p class="dish-desc">Tender chargrilled lemongrass pork chop served on fragrant broken rice with house pickled carrots, cucumber, and nuoc mam.</p>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="dish-card" data-category="all">
+            <span class="dish-badge">Fresh</span>
+            <h3 class="dish-name">Fresh Rice Paper Rolls</h3>
+            <div class="dish-viet">Gỏi Cuốn Tôm Thịt</div>
+            <p class="dish-desc">Hand-rolled rice paper rolls filled with king prawns, pork slices, vermicelli, and mint. Served with our house peanut dipping sauce.</p>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="dish-card" data-category="vegan">
+            <span class="dish-badge">Vegan</span>
+            <h3 class="dish-name">Crispy Vegetarian Spring Rolls</h3>
+            <div class="dish-viet">Chả Giò Chay</div>
+            <p class="dish-desc">Golden fried rolls filled with shredded taro, wood-ear fungus, vermicelli, and vegetables. Served with sweet vegetarian dipping sauce.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Review Recommendation -->
+    <section id="reviews" style="background: var(--bg-alt);">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag">As Seen On YouTube</p>
+          <h2>Recommended Video Review</h2>
+        </div>
+        <div style="max-width: 768px; margin: 0 auto; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 2.5rem; text-align: center; box-shadow: var(--shadow);">
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--dark);">What to Eat in Sydney Parramatta - Pho Review</h3>
+          <p style="color: var(--text-muted); margin-bottom: 1.8rem; font-size: 1rem;">
+            Watch this local food tour highlighting Western Sydney's best dining spots, featuring Pho Pasteur Parramatta on Church Street!
+          </p>
+          <a href="https://youtu.be/aSigbKHtZhY?si=Ae4gIBynEN91xDbD&t=690" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1rem; padding: 0.8rem 1.8rem;">
+            ▶️ Watch Review on YouTube (Timestamp 11:30)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location, Hours & Map -->
+    <section id="location">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag">Plan Your Visit</p>
+          <h2>Find Us in Parramatta</h2>
+        </div>
+
+        <div class="details-grid">
+          <!-- Card 1 -->
+          <div class="detail-card">
+            <h3>📍 Address</h3>
+            <p style="font-size:1.05rem; font-weight:700; color:var(--dark); margin-bottom:0.4rem;">
+              137 Church Street<br>Parramatta NSW 2150
+            </p>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.5rem;">
+              Located near the corner of Church St & Macquarie St, a short 3-minute stroll from Parramatta Train & Light Rail Station.
+            </p>
+            <a href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiY9t2KqaWXAxUAAAAAHQAAAAAQCA..i&rlz=1C1JJTC_enAU1144AU1144&udm&fvr=1&pvq=CgsvZy8xdGQwMG13aiIRCgtwaG8gcGFzdGV1chACGAM&lqi=CgtwaG8gcGFzdGV1ckjwnoHA5YCAgAhaFRAAEAEYABgBIgtwaG8gcGFzdGV1cpIBFXZpZXNuYW1lc2VfcmVzdGF1cmFudJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOeWVIQXlVblJSUlJBQvoBBAgAEDg&cs=1&um=1&ie=UTF-8&fb=1&gl=au&sa=X&ftid=0x6b12a321ad064f45:0xf013213fdd358959" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;">
+              Open in Google Maps ↗
             </a>
-            <div class="hidden md:flex space-x-8 font-medium text-stone-700">
-                <a href="#about" class="hover:text-red-600 transition">Our Story</a>
-                <a href="#gallery" class="hover:text-red-600 transition">Popular Dishes</a>
-                <a href="#order" class="hover:text-red-600 transition">Order Online</a>
-                <a href="#contact" class="hover:text-red-600 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- HERO SECTION -->
-    <header class="relative bg-stone-900 text-white py-20 px-4 text-center">
-        <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('./images/17926082539423594.jpg');"></div>
-        <div class="relative max-w-3xl mx-auto space-y-6">
-            <img src="./images/logo.jpg" alt="Pasteur Logo" class="w-28 mx-auto bg-white p-2 rounded-xl shadow-lg">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Famous Vietnamese Pho in Parramatta</h1>
-            <p class="text-lg md:text-xl text-stone-200">Authentic broth slow-cooked to perfection, fresh ingredients, and rich heritage in every bowl.</p>
-            <div class="pt-4 flex justify-center gap-4 flex-wrap">
-                <a href="#gallery" class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg">Explore Our Dishes</a>
-                <a href="#order" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg">Order Delivery</a>
-            </div>
-        </div>
-    </header>
+          <!-- Card 2 -->
+          <div class="detail-card">
+            <h3>⏰ Trading Hours</h3>
+            <table class="hours-list">
+              <tr><td>Monday</td><td style="color:#B41818;">Closed</td></tr>
+              <tr><td>Tuesday</td><td>11:00 AM – 8:00 PM</td></tr>
+              <tr><td>Wednesday</td><td>11:00 AM – 8:00 PM</td></tr>
+              <tr><td>Thursday</td><td>11:00 AM – 8:00 PM</td></tr>
+              <tr><td>Friday</td><td>11:00 AM – 8:00 PM</td></tr>
+              <tr><td>Saturday</td><td>11:00 AM – 8:00 PM</td></tr>
+              <tr><td>Sunday</td><td>11:00 AM – 8:00 PM</td></tr>
+            </table>
+          </div>
 
-    <!-- OUR STORY SECTION -->
-    <section id="about" class="py-16 max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white">
-                <img src="./images/17876506489772786.jpg" alt="Phở Pasteur Founders" class="w-full h-auto object-cover hover:scale-105 transition duration-500">
-            </div>
-            <div class="space-y-4">
-                <span class="text-red-700 font-bold uppercase tracking-wider text-sm">Our Heritage</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-stone-900">Famous in Vietnam, Loved in Sydney</h2>
-                <p class="text-stone-600 leading-relaxed">
-                    At Phở Pasteur, cooking is a family tradition. Dedicated to preserving authentic flavours, our broth is simmered for hours using time-tested family recipes. Whether you're craving a steaming bowl of traditional Phở, fragrant pork broken rice, or rich laksa, we bring genuine Vietnamese hospitality to Parramatta.
-                </p>
-                <div class="pt-2 flex items-center space-x-2 text-red-800 font-semibold">
-                    <i class="fas fa-heart text-red-600"></i>
-                    <span>Made fresh daily with local ingredients</span>
-                </div>
-            </div>
+          <!-- Card 3 -->
+          <div class="detail-card">
+            <h3>📞 Contact & Ordering</h3>
+            <p style="margin-bottom:1.2rem;">
+              <strong>Mobile / Direct Line:</strong><br>
+              <a href="tel:0409012363" style="color:var(--primary); font-weight:700; font-size:1.1rem;">0409 012 363</a>
+            </p>
+            <p style="font-size:0.85rem; color:var(--text-muted);">
+              Dine-in bookings welcome for large groups. Takeaway pickup available by phone, and delivery through major platforms.
+            </p>
+          </div>
         </div>
+
+        <!-- Google Map Embed -->
+        <div class="map-box">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.031548231804!2d151.0010996766128!3d-33.81831397324564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a319f3984e1b%3A0x6b4fb24e38e68407!2s137%20Church%20St%2C%20Parramatta%20NSW%202150!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Pho Pasteur Parramatta location map">
+          </iframe>
+        </div>
+
+        <!-- Social Callout & Instagram Preview -->
+        <div class="insta-strip">
+          <h2>Follow Our Food Journey</h2>
+          <p>Catch fresh daily specials, customer photos, and updates on our official Instagram page.</p>
+
+          <!-- Instagram Post Embed -->
+          <div style="display: flex; justify-content: center; margin: 2rem 0;">
+            <iframe src="https://www.instagram.com/p/Cn20MaiPxZS/embed" width="360" height="480" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius: 12px; background: #fff; max-width: 100%;"></iframe>
+          </div>
+
+          <a href="https://www.instagram.com/phopasteurchurchst" target="_blank" rel="noopener noreferrer" class="btn btn-insta" style="font-size:1rem; padding:0.8rem 1.8rem;">
+            Follow @phopasteurchurchst on Instagram
+          </a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- GALLERY SECTION -->
-    <section id="gallery" class="py-16 bg-stone-100">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-stone-900">Popular Specialties</h2>
-                <p class="text-stone-600 mt-2">A taste of our customer favorites prepared fresh every day.</p>
-            </div>
-            
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Dish 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-                    <img src="./images/17926082539423594.jpg" alt="Traditional Beef Phở" class="w-full h-56 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-stone-900">Traditional Beef Phở</h3>
-                        <p class="text-stone-600 text-sm mt-1">Rich beef broth, silky rice noodles, tender beef, fresh basil, and chilli.</p>
-                    </div>
-                </div>
-
-                <!-- Dish 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-                    <img src="./images/17873137039937494.jpg" alt="Grilled Pork Chop Rice" class="w-full h-56 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-stone-900">Cơm Tấm Sườn Nướng</h3>
-                        <p class="text-stone-600 text-sm mt-1">Marinated grilled pork chops over tomato broken rice served with broth.</p>
-                    </div>
-                </div>
-
-                <!-- Dish 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-                    <img src="./images/17887329199694730.jpg" alt="Spicy Coconut Laksa" class="w-full h-56 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-stone-900">Special Noodle Laksa</h3>
-                        <p class="text-stone-600 text-sm mt-1">Creamy coconut curry broth filled with noodles, prawns, tofu, and herbs.</p>
-                    </div>
-                </div>
-
-                <!-- Dish 4 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-                    <img src="./images/17874785740751207.jpg" alt="Spicy Beef Noodle Soup" class="w-full h-56 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-stone-900">Bún Bò Huế Style Soup</h3>
-                        <p class="text-stone-600 text-sm mt-1">Spicy, robust Vietnamese beef soup loaded with aromatics and tender beef.</p>
-                    </div>
-                </div>
-
-                <!-- Dish 5 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-                    <img src="./images/18081418087214072.jpg" alt="Signature Noodle Soup" class="w-full h-56 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-stone-900">Special Beef Noodle Special</h3>
-                        <p class="text-stone-600 text-sm mt-1">Fragrant broth with scallions, sliced beef, onions, and chili oil.</p>
-                    </div>
-                </div>
-            </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Phở Pasteur Parramatta</h4>
+          <p style="max-width:380px; margin-bottom:1rem;">
+            Serving Parramatta authentic Southern Vietnamese dishes and slow-cooked pho with heart and pride since 1992.
+          </p>
+          <p><strong>137 Church St, Parramatta NSW 2150</strong></p>
         </div>
-    </section>
 
-    <!-- ORDER ONLINE SECTION -->
-    <section id="order" class="py-16 bg-emerald-900 text-white text-center">
-        <div class="max-w-4xl mx-auto px-4 space-y-6">
-            <h2 class="text-3xl md:text-4xl font-bold">Order Online for Delivery</h2>
-            <p class="text-emerald-100 text-lg">Enjoy Phở Pasteur hot and fresh in the comfort of your home.</p>
-            <div class="pt-4 flex justify-center">
-                <a href="https://www.ubereats.com" target="_blank" class="hover:scale-105 transition transform inline-block">
-                    <img src="./images/uber-eats-button.png" alt="Order on Uber Eats" class="h-20 w-auto bg-black p-2 rounded-full shadow-2xl">
-                </a>
-            </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Our Heritage</a></li>
+            <li><a href="#menu">Menu & Specialties</a></li>
+            <li><a href="#reviews">Featured Review</a></li>
+            <li><a href="#location">Trading Hours</a></li>
+            <li><a href="tel:0409012363">Order Takeaway (0409 012 363)</a></li>
+          </ul>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer id="contact" class="bg-stone-900 text-stone-400 py-10">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
-            <div>
-                <img src="./images/logo.jpg" alt="Phở Pasteur Logo" class="h-12 mx-auto md:mx-0 mb-3 rounded bg-white p-1">
-                <p class="text-sm">Authentic Vietnamese Noodle Soup & Cuisine in Parramatta.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-3">Visit Us</h4>
-                <p class="text-sm">Parramatta, NSW Australia</p>
-                <p class="text-sm mt-1"><i class="fas fa-phone mr-2"></i>(02) 9687 4301</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-3">Follow Us</h4>
-                <a href="https://www.instagram.com/phopasteurparramatta" target="_blank" class="text-stone-400 hover:text-white text-xl">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/phopasteurchurchst" target="_blank" rel="noopener noreferrer">Instagram (@phopasteurchurchst)</a></li>
+            <li><a href="https://www.facebook.com/phopasteurchurchst" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="tel:0409012363">📞 0409 012 363</a></li>
+          </ul>
         </div>
-        <div class="border-t border-stone-800 mt-8 pt-6 text-center text-xs">
-            © 2026 Phở Pasteur Parramatta. All Rights Reserved.
-        </div>
-    </footer>
+      </div>
 
+      <div class="footer-bottom">
+        <p>© 1992–Present Pho Pasteur Parramatta. All rights reserved. Registered domain: phopasteur-parramatta.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile Action Bar -->
+  <div class="mobile-bar">
+    <a href="tel:0409012363" class="btn btn-primary">📞 Call 0409 012 363</a>
+    <a href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiY9t2KqaWXAxUAAAAAHQAAAAAQCA..i&rlz=1C1JJTC_enAU1144AU1144&udm&fvr=1&pvq=CgsvZy8xdGQwMG13aiIRCgtwaG8gcGFzdGV1chACGAM&lqi=CgtwaG8gcGFzdGV1ckjwnoHA5YCAgAhaFRAAEAEYABgBIgtwaG8gcGFzdGV1cpIBFXZpZXNuYW1lc2VfcmVzdGF1cmFudJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOeWVIQXlVblJSUlJBQvoBBAgAEDg&cs=1&um=1&ie=UTF-8&fb=1&gl=au&sa=X&ftid=0x6b12a321ad064f45:0xf013213fdd358959" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📍 Directions</a>
+  </div>
+
+  <!-- Filter Script -->
+  <script>
+    function filterDishes(category) {
+      const cards = document.querySelectorAll('.dish-card');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        const itemCat = card.getAttribute('data-category');
+        if (category === 'all' || itemCat === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
