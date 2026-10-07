@@ -242,6 +242,69 @@
       border: none;
     }
 
+    .btn-uber {
+      background: #06C167;
+      color: #fff !important;
+      border: none;
+      box-shadow: 0 4px 14px rgba(6, 193, 103, 0.22);
+    }
+
+    .btn-uber:hover {
+      background: #059653;
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(6, 193, 103, 0.3);
+    }
+
+    .order-banner {
+      background: linear-gradient(135deg, #06C167 0%, #059653 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem 2.2rem;
+      margin: 0 auto 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-shadow: 0 14px 32px rgba(6, 193, 103, 0.18);
+    }
+
+    .order-banner h3 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .order-banner p {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .order-banner .btn {
+      background: #fff;
+      color: #075f36 !important;
+      flex-shrink: 0;
+    }
+
+    .order-banner .btn:hover {
+      background: #f2fff8;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 700px) {
+      .order-banner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        padding: 1.7rem 1.3rem;
+      }
+
+      .order-banner .btn {
+        width: 100%;
+      }
+    }
+
     /* Hero */
     .hero {
       padding: 5.5rem 0 4rem;
@@ -664,6 +727,7 @@
           <li><a href="#menu">Menu</a></li>
           <li><a href="#reviews">Featured Review</a></li>
           <li><a href="#location">Hours & Location</a></li>
+          <li><a href="https://www.ubereats.com/au/store/pho-pasteur-parramatta/s4946gf4V3CeG-hlppiPjw?srsltid=AU7gw4WFaud1D4tqtWGnDia7wwWg3n0pbIjClgHbnFl5a3-t-kBKmNlk" target="_blank" rel="noopener noreferrer" class="btn btn-uber">🛵 Order Uber Eats</a></li>
           <li><a href="tel:0409012363" class="btn btn-outline">📞 0409 012 363</a></li>
           <li><a href="https://www.instagram.com/phopasteurchurchst" target="_blank" rel="noopener noreferrer" class="btn btn-insta">Instagram @phopasteurchurchst</a></li>
         </ul>
@@ -684,6 +748,7 @@
 
         <div class="hero-actions">
           <a href="#menu" class="btn btn-primary">Browse Specialties</a>
+          <a href="https://www.ubereats.com/au/store/pho-pasteur-parramatta/s4946gf4V3CeG-hlppiPjw?srsltid=AU7gw4WFaud1D4tqtWGnDia7wwWg3n0pbIjClgHbnFl5a3-t-kBKmNlk" target="_blank" rel="noopener noreferrer" class="btn btn-uber">🛵 Order on Uber Eats</a>
           <a href="tel:0409012363" class="btn btn-outline">Call 0409 012 363</a>
           <a href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiY9t2KqaWXAxUAAAAAHQAAAAAQCA..i&rlz=1C1JJTC_enAU1144AU1144&udm&fvr=1&pvq=CgsvZy8xdGQwMG13aiIRCgtwaG8gcGFzdGV1chACGAM&lqi=CgtwaG8gcGFzdGV1ckjwnoHA5YCAgAhaFRAAEAEYABgBIgtwaG8gcGFzdGV1cpIBFXZpZXNuYW1lc2VfcmVzdGF1cmFudJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOeWVIQXlVblJSUlJBQvoBBAgAEDg&cs=1&um=1&ie=UTF-8&fb=1&gl=au&sa=X&ftid=0x6b12a321ad064f45:0xf013213fdd358959" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Get Directions ↗</a>
         </div>
@@ -756,11 +821,19 @@
           <h2>Crafted With Tradition</h2>
         </div>
 
+        <div class="order-banner">
+          <div>
+            <h3>Enjoy Pho Pasteur at Home</h3>
+            <p>Order your favourites for delivery through Uber Eats.</p>
+          </div>
+          <a href="https://www.ubereats.com/au/store/pho-pasteur-parramatta/s4946gf4V3CeG-hlppiPjw?srsltid=AU7gw4WFaud1D4tqtWGnDia7wwWg3n0pbIjClgHbnFl5a3-t-kBKmNlk" target="_blank" rel="noopener noreferrer" class="btn">🛵 Order on Uber Eats ↗</a>
+        </div>
+
         <div class="menu-tabs">
-          <button class="tab-btn active" onclick="filterDishes('all')">All Dishes</button>
-          <button class="tab-btn" onclick="filterDishes('pho')">Pho & Soups</button>
-          <button class="tab-btn" onclick="filterDishes('mains')">Rice & Pancakes</button>
-          <button class="tab-btn" onclick="filterDishes('vegan')">Vegetarian</button>
+          <button class="tab-btn active" onclick="filterDishes('all', this)">All Dishes</button>
+          <button class="tab-btn" onclick="filterDishes('pho', this)">Pho & Soups</button>
+          <button class="tab-btn" onclick="filterDishes('mains', this)">Rice & Pancakes</button>
+          <button class="tab-btn" onclick="filterDishes('vegan', this)">Vegetarian</button>
         </div>
 
         <div class="menu-grid" id="menu-grid">
@@ -886,9 +959,12 @@
               <strong>Mobile / Direct Line:</strong><br>
               <a href="tel:0409012363" style="color:var(--primary); font-weight:700; font-size:1.1rem;">0409 012 363</a>
             </p>
-            <p style="font-size:0.85rem; color:var(--text-muted);">
-              Dine-in bookings welcome for large groups. Takeaway pickup available by phone, and delivery through major platforms.
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.2rem;">
+              Dine-in bookings welcome for large groups. Takeaway pickup available by phone.
             </p>
+            <a href="https://www.ubereats.com/au/store/pho-pasteur-parramatta/s4946gf4V3CeG-hlppiPjw?srsltid=AU7gw4WFaud1D4tqtWGnDia7wwWg3n0pbIjClgHbnFl5a3-t-kBKmNlk" target="_blank" rel="noopener noreferrer" class="btn btn-uber" style="width:100%;">
+              🛵 Order Delivery on Uber Eats ↗
+            </a>
           </div>
         </div>
 
@@ -936,6 +1012,7 @@
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul>
+            <li><a href="https://www.ubereats.com/au/store/pho-pasteur-parramatta/s4946gf4V3CeG-hlppiPjw?srsltid=AU7gw4WFaud1D4tqtWGnDia7wwWg3n0pbIjClgHbnFl5a3-t-kBKmNlk" target="_blank" rel="noopener noreferrer">🛵 Order on Uber Eats</a></li>
             <li><a href="#about">About Our Heritage</a></li>
             <li><a href="#menu">Menu & Specialties</a></li>
             <li><a href="#reviews">Featured Review</a></li>
@@ -962,18 +1039,19 @@
 
   <!-- Floating Mobile Action Bar -->
   <div class="mobile-bar">
-    <a href="tel:0409012363" class="btn btn-primary">📞 Call 0409 012 363</a>
+    <a href="https://www.ubereats.com/au/store/pho-pasteur-parramatta/s4946gf4V3CeG-hlppiPjw?srsltid=AU7gw4WFaud1D4tqtWGnDia7wwWg3n0pbIjClgHbnFl5a3-t-kBKmNlk" target="_blank" rel="noopener noreferrer" class="btn btn-uber">🛵 Uber Eats</a>
+    <a href="tel:0409012363" class="btn btn-primary">📞 Call</a>
     <a href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiY9t2KqaWXAxUAAAAAHQAAAAAQCA..i&rlz=1C1JJTC_enAU1144AU1144&udm&fvr=1&pvq=CgsvZy8xdGQwMG13aiIRCgtwaG8gcGFzdGV1chACGAM&lqi=CgtwaG8gcGFzdGV1ckjwnoHA5YCAgAhaFRAAEAEYABgBIgtwaG8gcGFzdGV1cpIBFXZpZXNuYW1lc2VfcmVzdGF1cmFudJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOeWVIQXlVblJSUlJBQvoBBAgAEDg&cs=1&um=1&ie=UTF-8&fb=1&gl=au&sa=X&ftid=0x6b12a321ad064f45:0xf013213fdd358959" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📍 Directions</a>
   </div>
 
   <!-- Filter Script -->
   <script>
-    function filterDishes(category) {
+    function filterDishes(category, button) {
       const cards = document.querySelectorAll('.dish-card');
       const buttons = document.querySelectorAll('.tab-btn');
 
       buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      button.classList.add('active');
 
       cards.forEach(card => {
         const itemCat = card.getAttribute('data-category');
